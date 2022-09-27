@@ -1,0 +1,23 @@
+env:
+    config:
+        APP_ENV: ENC[AES256_GCM,data:6MgNLQ==,iv:ttd3hEG/i9B/fxnGm9wMv4lGHx2U5Hnorq1JdF7KSQA=,tag:2V7AILWVMktEgsgvdCcB/Q==,type:str]
+        CHANNEL_ID: ENC[AES256_GCM,data:OPHwRy7oILenUyA=,iv:0QWPWZo4IyLDfI8hIWWA93lIh9fWpsLx9YL07sWN8X8=,tag:hlZouR5Ms6PxSx+hN959VA==,type:str]
+    secret:
+        SLACK_BOT_TOKEN: ENC[AES256_GCM,data:sxuGiATMEoXh2bLg9FpRPfbsgBoDaPGOT+ILdSV2w/bi2hiQ7yBUT6OWiu0a/kaaj58YFI3Bi/c=,iv:z7xrBLIA2Hgh7avCKxZEE+GOTyDAtnm5r7Emw20qWig=,tag:sa4Dd1oCfc/MN1bha7JHKA==,type:str]
+        SLACK_SIGNING_SECRET: ENC[AES256_GCM,data:TCdwy3Dhwvkglk+AJXaeqHU3mFrt8liXNJlNJnze2Xg=,iv:7wg8l/7XFTVnEu/o9n6uO4+AvGg19PCW/vc18v0JlYU=,tag:iAVx7dI0oCGv3FZFY5YRxA==,type:str]
+        DB_USER: ENC[AES256_GCM,data:nzNj,iv:Den2IVyMPNajofVnO2yFzOblsSAwlt8bqZNmgcsAsQs=,tag:ArFDsJm1n8weaC7hLt/FAQ==,type:str]
+        DB_PASSWORD: ENC[AES256_GCM,data:VIvANFZI7JOeIa4ZcFztzg==,iv:2qgL4cC92pCZzRQsuGNmDtUXsPvoT4789oH9QBm0v3I=,tag:8WAq9BnMvRs3FtpskY0eqg==,type:str]
+sops:
+    kms: []
+    gcp_kms:
+        - resource_id: projects/metro-markets-sms-prod/locations/global/keyRings/sops-keyring/cryptoKeys/sops
+          created_at: "2022-09-02T13:13:24Z"
+          enc: CiQARJo/Q5RP80DtSsZLxzBU2PwyILqCtVxShkabqUw35PYpU2oSSQBexhDYnYuG554o+nMt3E0EAKML86Nj8h4tcE9CIIHe41f8Hj0mlBjpEdQoTNYDNfbIqD4aWyGvaJXAPE7BafXP42V9bf2IM04=
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-09-02T13:20:55Z"
+    mac: ENC[AES256_GCM,data:G21tKVK/XXwz3u+43P0G0Dhzp8b0Zm/aRRxlg8OKrlknFq2AF45C1BKSVmU832NEk7f+F/DkKUwTT8+wy+mh/BhJ58rrqR0IEiZakxPQg8TqprLSbumxBZaVDOOwSdPSe/phfhxNZxFJy0WbTGNa6LTKIKwvs6fEfcn9IGkDse8=,iv:yJMvxH+nptRqDIQze5L3Iy6r+jF2WwIfA5BkEtI4DPc=,tag:2dV+5oVnX3MzcxkvuVfNDQ==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.7.1

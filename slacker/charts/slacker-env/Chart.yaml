@@ -1,0 +1,12 @@
+apiVersion: v2
+name: slacker
+description: A Helm chart for Slacker (offer-experiments) Environment
+type: application
+version: 0.1.9
+appVersion: 1.0.0
+sources:
+- https://git.cps.metro-markets.org/erp/offer/offer-experiments.git
+dependencies:
+- name: env
+  version: 0.1.3
+  repository: alias:harbor_erp

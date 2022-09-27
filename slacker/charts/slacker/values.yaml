@@ -1,0 +1,24 @@
+# Default values for slacker.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Global settings
+global:
+  application: slacker
+  serviceEnv: slacker-env
+  image:
+    repository: eu.gcr.io/metro-markets-sms-dev/slacker
+    tag: latest
+    pullPolicy: IfNotPresent
+
+
+cron:
+  nameOverride: slacker-cron
+  fullnameOverride: slacker-cron
+  cronJobs:
+    file-import-scheduler:
+      name: offer_experiments_slacker
+      schedule: "0 * * * *"
+      activeDeadline: 120
+      command: ["node"]
+      args: ["/home/node/app/app.js"]

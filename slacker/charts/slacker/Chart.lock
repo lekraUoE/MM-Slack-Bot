@@ -1,0 +1,6 @@
+dependencies:
+- name: cron
+  repository: https://artifactory.cps-artifacts.metro-markets.org/artifactory/api/helm/helm-virtual-erp
+  version: 0.2.6
+digest: sha256:feb14713cdbb16712174018f073c4a6ca361c0009e18cbab15d139d1dde9c843
+generated: "2022-09-02T15:22:27.66699853+02:00"

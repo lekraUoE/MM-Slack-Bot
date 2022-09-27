@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":rebaseStalePrs"
+  ],
+  "ignorePresets": [
+    ":prHourlyLimit2",
+    ":prConcurrentLimit10"
+  ]
+}

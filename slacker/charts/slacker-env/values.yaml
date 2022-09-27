@@ -1,0 +1,11 @@
+# Default values for finance-portal-env.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+global:
+  application: slacker
+# Make sure to quote all numbers
+env:
+  nameOverride: slacker-env
+  config: {}
+  secret: {}
