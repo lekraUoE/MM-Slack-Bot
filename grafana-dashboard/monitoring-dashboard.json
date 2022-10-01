@@ -1,0 +1,347 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "target": {
+            "limit": 100,
+            "matchAny": false,
+            "tags": [],
+            "type": "dashboard"
+          },
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "Template example of cron monitoring dashboard",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 419,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": {
+          "type": "prometheus",
+          "uid": "000000016"
+        },
+        "description": "Should help to identify cron jobs which were not run",
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 9,
+          "w": 10,
+          "x": 0,
+          "y": 0
+        },
+        "hiddenSeries": false,
+        "id": 3,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 3,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "9.1.5",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "000000016"
+            },
+            "editorMode": "code",
+            "expr": "sum(kube_pod_container_status_running{container=\"offer-experiments-slacker\"})",
+            "interval": "",
+            "legendFormat": "Running status",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": "3h",
+        "timeRegions": [],
+        "title": "Alerting for skipped runs",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "mode": "time",
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:81",
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:82",
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false
+        }
+      },
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": {
+          "type": "prometheus",
+          "uid": "000000016"
+        },
+        "description": "Should help to identify potentially stuck cron jobs",
+        "fill": 1,
+        "fillGradient": 0,
+        "gridPos": {
+          "h": 9,
+          "w": 10,
+          "x": 10,
+          "y": 0
+        },
+        "hiddenSeries": false,
+        "id": 2,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 3,
+        "nullPointMode": "null",
+        "options": {
+          "alertThreshold": true
+        },
+        "percentage": false,
+        "pluginVersion": "9.1.5",
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "000000016"
+            },
+            "editorMode": "code",
+            "exemplar": true,
+            "expr": "sum(kube_pod_container_status_running{container=\"offer-experiments-slacker\"})",
+            "interval": "",
+            "legendFormat": "Running status",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "thresholds": [],
+        "timeFrom": "3h",
+        "timeRegions": [],
+        "title": "Alerting for too long execution duration",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "mode": "time",
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "$$hashKey": "object:81",
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          },
+          {
+            "$$hashKey": "object:82",
+            "format": "short",
+            "logBase": 1,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false
+        }
+      },
+      {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "000000016"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "axisSoftMax": 2,
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 10,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "line+area"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "transparent",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 0
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": [
+            {
+              "matcher": {
+                "id": "byName",
+                "options": "Execution failures"
+              },
+              "properties": [
+                {
+                  "id": "color",
+                  "value": {
+                    "fixedColor": "#E02F44",
+                    "mode": "fixed"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 20,
+          "x": 0,
+          "y": 9
+        },
+        "id": 5,
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "multi",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "8.5.9",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "000000016"
+            },
+            "editorMode": "code",
+            "exemplar": false,
+            "expr": "sum(label_replace(increase(kube_job_status_failed{job_name=~\"slacker-cron-file-import-scheduler-.*\"}[1h]), \"job_namex\", \"$1\", \"job_name\", \"(.*)-.+\")) by (job_namex)",
+            "hide": false,
+            "legendFormat": "{{ job_namex }}",
+            "range": true,
+            "refId": "A"
+          }
+        ],
+        "timeFrom": "12h",
+        "title": "Execution failures",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 37,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": []
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "ERP Offer Slack Bot Cron Monitoring",
+    "uid": "8mTpp67Vz",
+    "version": 5,
+    "weekStart": ""
+  }
